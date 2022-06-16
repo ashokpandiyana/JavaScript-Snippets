@@ -1,7 +1,7 @@
-Function.prototype.myBind = function (currentContext = {}, ...args) {
-  currentContext.func = this;
+Function.prototype.myBind = function (obj = {}, ...args) {
+  obj.func = this;
   return function () {
-    return currentContext.func(...args);
+    return obj.func(...args);
   };
 };
 

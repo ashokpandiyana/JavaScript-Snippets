@@ -7,8 +7,6 @@ class Chameleon {
   constructor({ newColor = "green" } = {}) {
     this.newColor = newColor;
   }
-
-  
 }
 
 const freddie = new Chameleon({ newColor: "purple" });

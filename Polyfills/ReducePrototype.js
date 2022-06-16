@@ -1,15 +1,9 @@
 Array.prototype.myReduce = function (cb, acc) {
-  var i = 0;
-  if (acc === void 0) {
-    acc = this[0];
-    i = 1;
+  let accumulator = acc;
+  for (let i = 0; i < this.length; i++) {
+    accumulator = cb(accumulator, this[i]);
   }
-  for (; i < this.length; i++) {
-    var newAcc = cb(acc, this[i], i, this);
-    if (newAcc === undefined) continue;
-    acc = newAcc;
-  }
-  return acc;
+  return accumulator;
 };
 
 var values = [2, 5, 5];
