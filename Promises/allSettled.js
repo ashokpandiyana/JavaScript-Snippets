@@ -12,6 +12,17 @@ const p2 = new Promise((resolve, reject) => {
   }, 2 * 1000);
 });
 
+Promise.myAllSettled = function(promises){
+  let result = []
+  return new Promise ((resolve,reject)=>promises.forEach(val=> val.then(output => result.push(output)).catch(err => result.push(err))))
+}
+
 Promise.allSettled([p1, p2]).then((result) => {
+  console.log(result);
+});
+
+
+
+Promise.myAllSettled([p1, p2]).then((result) => {
   console.log(result);
 });

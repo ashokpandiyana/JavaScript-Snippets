@@ -3,9 +3,9 @@
 Object.prototype.introduce = function () {
   return "Hello World";
 };
-// String.prototype.introduce = function () {
-//   return "Hello World from String";
-// };
+String.prototype.introduce = function () {
+  return "Hello World from String";
+};
 let hi = "Hello";
 let num = 2;
 console.log(hi.introduce());
