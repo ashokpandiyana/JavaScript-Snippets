@@ -1,7 +1,10 @@
 Function.prototype.myBind = function (obj = {}, ...args) {
+  if (typeof this !== "function") {
+    throw new Error("It's not a function");
+  }
   obj.func = this;
-  return function () {
-    return obj.func(...args);
+  return function (...newArgs) {
+    return obj.func(...args, ...newArgs);
   };
 };
 

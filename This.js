@@ -13,7 +13,23 @@ const obj = {
   },
   getName2: function () {
     console.log(this.name);
+    (() => {
+      console.log(this);
+    })();
   },
 };
 obj.getName();
 obj.getName2();
+
+var obj2 = {
+  a: 5,
+  b: function () {
+    console.log(this);
+    var c = function () {
+      console.log(c, this);
+    };
+    c();
+  },
+};
+
+obj2.b();
